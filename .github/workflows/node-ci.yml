@@ -2,26 +2,26 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-	steps:
-      # 1️⃣ Получаем код из репозитория
+    steps:
+      # 1. Получаем код
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Устанавливаем Node.js
+      # 2. Ставим Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3️⃣ Проверяем версию Node.js
-      - name: Проверка версии Node.js
+      # 3. Проверка
+      - name: Print Node version
         run: node -v
 
       # 4️⃣ Устанавливаем зависимости
